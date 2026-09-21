@@ -1,3 +1,7 @@
+import GenZX as gen
+
 while True:
     command = input("$GenZX >> ")
-    print(command)
+    result, error = gen.run('<stdin>', command)
+    if error: print(error.as_string())
+    else: print(result)
